@@ -3,20 +3,18 @@
 # Regional Poverty Estimates for East and West Africa regions
 This code allows the user to replicate the poverty estimates for the East and West Africa regions as defined by the World Bank and reported in ["March 2021 PovcalNet Update- What's New"](https://documents1.worldbank.org/curated/en/654971615585402030/pdf/March-2021-PovcalNet-Update-What-s-New.pdf). The auxiliary material needed to run this code can be found [here](https://github.com/PovcalNet-Team/AFEAFW)
 
-```stata
-/*==================================================
-// Install necessary packages
-==================================================*/
+## Install necessary STATA commands
 
+```stata
 local cmds "renvars povcalnet _gwtmean"
 
 foreach cmd of local cmds {
 	cap which `cmd'
 	if (_rc) ssc install `cmd'
 }
-/*==================================================
-//1.1 Get auxiliary data
-==================================================*/
+```
+## Prepare auxiliary data needed for calculations
+```stata
 
 //population data 
 insheet using "http://iresearch.worldbank.org/PovcalNet/js/population.js", clear
@@ -85,11 +83,9 @@ replace regioncode2="AFW" if regexm(countrycode, "`afw_codes'")
 
 tempfile all
 save `all'
-
-
-/*==================================================
- 1.2:	Calculate regional estimates
-==================================================*/
+```
+## Calculate regional estimates
+```stata
 //povline: 1.90
 foreach pl in 1.90 3.20 5.50{
 	povcalnet, clear fillgaps region(ssa) povline(`pl')
