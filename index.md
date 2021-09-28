@@ -2,7 +2,7 @@
 
 # Global and Regional Poverty Estimates
 
-You can use this code to replicate the global and regional poverty estimates published by the World Bank. This code uses the [PovcalNet command](https://worldbank.github.io/povcalnet/) to estimate global and regional poverty aggregates from country-level lined-up data. The methodological details behind this calculations and the country-level lined-up estimates can be found on the [PovcalNet website](http://iresearch.worldbank.org/PovcalNet/home.aspx). 
+This code allows the user to replicate the global and regional poverty estimates published by the World Bank. This code uses the [PovcalNet command](https://worldbank.github.io/povcalnet/) to estimate global and regional poverty aggregates from country-level lined-up data. The methodological details behind this calculations and the country-level lined-up estimates can be found on the [PovcalNet website](http://iresearch.worldbank.org/PovcalNet/home.aspx). 
 
 # Global and Regional Poverty Estimates
 ### Install necessary commands
