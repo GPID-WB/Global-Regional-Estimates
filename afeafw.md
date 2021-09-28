@@ -1,7 +1,7 @@
 ## [Global and Regional Aggregates](index.md) --- [Regional Aggregates:AFE/AFW](afeafw.md) 
 
 # Regional Poverty Estimates for East and West Africa regions
-This code allows the user to replicate the poverty estimates for the East and West Africa regions as defined by the World Bank and reported in ["March 2021 PovcalNet Update- What's New"](https://documents1.worldbank.org/curated/en/654971615585402030/pdf/March-2021-PovcalNet-Update-What-s-New.pdf).
+This code allows the user to replicate the poverty estimates for the East and West Africa regions as defined by the World Bank and reported in ["March 2021 PovcalNet Update- What's New"](https://documents1.worldbank.org/curated/en/654971615585402030/pdf/March-2021-PovcalNet-Update-What-s-New.pdf). The auxiliary material needed to run this code can be found [here](https://github.com/PovcalNet-Team/AFEAFW)
 
 ```stata
 /*==================================================
