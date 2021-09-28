@@ -1,4 +1,4 @@
-## [Global and Regional Estimates](index.md) --- [Regional Aggregates: AFE/AFW](afeafw.md) 
+## [Global and Regional Estimates](index.md) --- [Regional Estimates: AFE/AFW](afeafw.md) 
 
 # Global and Regional Poverty Estimates
 
