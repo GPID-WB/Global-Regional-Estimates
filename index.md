@@ -1,4 +1,4 @@
-## [Global and Regional Aggregates](index.md) --- [Regional Aggregates:AFE/AFW](afeafw.md) 
+## [Global and Regional Aggregates](index.md) --- [Regional Aggregates: AFE/AFW](afeafw.md) 
 
 # Global and Regional Poverty Estimates
 
@@ -43,26 +43,27 @@ save `regions'
 ```
 ### Calculate Global and Regional Poverty Headcount Rates
 ```stata
-povcalnet, fillgaps clear 
+povcalnet, fillgaps clear 	//load country-level lined-up estimates using povcalnet command
 keep if coveragetype==3 | coveragetype==4 | countrycode=="ARG" | countrycode=="SUR"
 keep countrycode year headcount population
 
 //merge regioncodes
-merge m:1 countrycode using `regions', nogen
+merge m:1 countrycode using `regions', nogen	//merge with regional identifiers
 
 keep regioncode countrycode year headcount population  
  
-collapse headcount [aw=population] , by(regioncode year)
+collapse headcount [aw=population] , by(regioncode year) // calculate regional headcount rates
 sort year regioncode
 
-merge 1:1 regioncode year using `pop', nogen
+merge 1:1 regioncode year using `pop', nogen //merge with regional total population
 gen poorpop=headcount*population
 
 tempfile regional
 save `regional'
+
 bys year: egen globalpop=sum(population)
 
-collapse globalpop (mean) headcount [aw=population], by(year)
+collapse globalpop (mean) headcount [aw=population], by(year) //calculate global headcount rates
 ren globalpop population
 gen poorpop=headcount*population
 append using `regional'
@@ -73,7 +74,7 @@ sort year regioncode
 br if year==2017
 tempfile aggregates
 
-save `aggregates', replace 
+save `aggregates', replace 		//regional and global poverty headcounts
 ```
 ### Calculate Coverage 
 Poverty rates for a region are only reported when the available surveys cover at least 50 percent of the population in that region (within a window of three years either side of the reference year). Global poverty estimates are reported only if data is representative of at least 50 percent of the population in low-income and lower-middle income countries (LIC/LMIC countries), where most of the poor live. This requirement is only applied to the global poverty estimate, not at the regional level. The World Bank classification of countries according to income groups in the line-up year is used.
