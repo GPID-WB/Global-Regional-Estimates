@@ -1,6 +1,6 @@
 # Global and Regional Poverty Estimates
 
-This code allows the user to replicate the global and regional poverty estimates published by the World Bank. This code uses the [PovcalNet command](https://worldbank.github.io/povcalnet/) to estimate global and regional poverty aggregates from country-level lined-up data. The methodological details behind this calculations and the country-level lined-up estimates can be found on the [PovcalNet website](http://iresearch.worldbank.org/PovcalNet/home.aspx). 
+This code allows the user to replicate the global and regional poverty estimates published by the World Bank. This code uses the [PovcalNet command](https://worldbank.github.io/povcalnet/) to estimate global and regional poverty aggregates from country-level lined-up data. The methodological details behind this calculations and the country-level lined-up estimates can be found on the [PovcalNet website](http://iresearch.worldbank.org/PovcalNet/home.aspx). The code requires STATA version 14.0 or newer.
 
 # Global and Regional Poverty Estimates
 ### Install necessary STATA commands
@@ -8,6 +8,7 @@ This code allows the user to replicate the global and regional poverty estimates
 ssc install povcalnet
 ssc install renvars
 ssc install missings 
+version 14.0
 ```
 ### Prepare auxiliary population data needed for calculations
 ```stata
